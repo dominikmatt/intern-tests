@@ -1,0 +1,253 @@
+<?xml version="1.0" ?>
+<template xmlns="http://schemas.sulu.io/template/template"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd">
+
+    <key>default</key>
+
+    <meta>
+        <title lang="de">Standard</title>
+        <title lang="en">Default</title>
+    </meta>
+
+    <properties>
+        <section name="content">
+            <meta>
+                <title lang="de">Kopfbereich</title>
+                <title lang="en">Header</title>
+
+                <info_text lang="de">Bereich für den Inhalt</info_text>
+                <info_text lang="en">Content Section</info_text>
+            </meta>
+            <properties>
+                <property name="title" type="text_line">
+                    <meta>
+                        <title lang="de">Titel</title>
+                        <title lang="en">Title</title>
+                    </meta>
+                </property>
+
+                <property name="old_wp_url" type="text_line">
+                    <meta>
+                        <title lang="de">Alte Wordpress Url</title>
+                        <title lang="en">Old Wordpress url</title>
+                    </meta>
+                </property>
+            </properties>
+        </section>
+
+        <property name="images" type="media_selection">
+            <tag name="sulu.search.field" role="image" index="false"/>
+            <meta>
+                <title lang="de">Headerbild</title>
+                <title lang="en">Headerimage</title>
+            </meta>
+
+            <tag name="sulu.search.field" role="image" index="false"/>
+        </property>
+
+        <property name="description" type="text_editor">
+            <meta>
+                <title lang="de">Artikeltext</title>
+                <title lang="en">Articletext</title>
+            </meta>
+
+            <tag name="sulu.search.field" role="description"/>
+        </property>
+
+        <block name="blocks"
+               default-type="textblock"
+               minOccurs="0"
+               maxOccurs="99">
+            <meta>
+                <title lang="de">Blöcke</title>
+                <title lang="en">Blocks</title>
+            </meta>
+            <types>
+                <type name="textblock">
+                    <meta>
+                        <title lang="de">Text und Titel</title>
+                        <title lang="en">Text and title</title>
+                    </meta>
+                    <properties>
+                        <property name="title" type="text_line">
+                            <meta>
+                                <title lang="de">Titel</title>
+                                <title lang="en">Title</title>
+                            </meta>
+
+                            <tag name="sulu.content.sortmode.show"/>
+                        </property>
+                        <property name="description" type="text_editor">
+                            <meta>
+                                <title lang="de">Beschreibung</title>
+                                <title lang="en">Description</title>
+                            </meta>
+
+                            <params>
+                                <param name="link" value="true"/>
+                                <param name="table" value="true"/>
+                                <param name="paste_from_word" value="true"/>
+                                <param name="extra_allowed_content" value="img(*)[*]; span(*)[*]; div(*)[*]; iframe(*)[*]; script(*)[*]" />
+                            </params>
+                        </property>
+                    </properties>
+                </type>
+                <type name="video">
+                    <meta>
+                        <title lang="de">Video</title>
+                        <title lang="en">Video</title>
+                    </meta>
+                    <properties>
+                        <property name="title" type="text_line">
+                            <meta>
+                                <title lang="de">Titel</title>
+                                <title lang="en">Title</title>
+                            </meta>
+
+                            <tag name="sulu.content.sortmode.show"/>
+                        </property>
+                        <property name="video_code" type="text_area">
+                            <meta>
+                                <title lang="de">Video Iframe Tag</title>
+                                <title lang="en">Video Iframe Code</title>
+                            </meta>
+
+                            <tag name="sulu.search.field" index="false"/>
+                        </property>
+                    </properties>
+                </type>
+                <type name="twitter">
+                    <meta>
+                        <title lang="de">Twitter</title>
+                        <title lang="en">Twitter</title>
+                    </meta>
+                    <properties>
+                        <property name="twitter_code" type="text_area">
+                            <meta>
+                                <title lang="de">Embed Tweet</title>
+                                <title lang="en">Embed Tweet</title>
+                            </meta>
+                        </property>
+                    </properties>
+                </type>
+                <type name="quote">
+                    <meta>
+                        <title lang="de">Zitat</title>
+                        <title lang="en">Quote</title>
+                    </meta>
+                    <properties>
+                        <property name="description" type="text_area">
+                            <meta>
+                                <title lang="de">Text</title>
+                                <title lang="en">Text</title>
+                            </meta>
+                        </property>
+
+                        <property name="info" type="text_line">
+                            <meta>
+                                <title lang="de">Zitat Info</title>
+                                <title lang="en">quote info</title>
+                            </meta>
+
+                            <tag name="sulu.content.sortmode.show"/>
+                        </property>
+                    </properties>
+                </type>
+                <type name="gallery">
+                    <meta>
+                        <title lang="de">Bildergalerie</title>
+                        <title lang="en">Imagegallery</title>
+                    </meta>
+                    <properties>
+                        <property name="gallery" type="media_selection">
+                            <meta>
+                                <title lang="de">Bilder</title>
+                                <title lang="en">Images</title>
+                            </meta>
+                        </property>
+                    </properties>
+                </type>
+                <type name="external-link">
+                    <meta>
+                        <title lang="de">Externer Link</title>
+                        <title lang="en">External Link</title>
+                    </meta>
+                    <properties>
+                        <property name="snippets" type="snippet">
+                            <meta>
+                                <title lang="de">Schnipsel</title>
+                                <title lang="en">Snippets</title>
+                            </meta>
+
+                            <params>
+                                <param name="snippetType" value="external_link"/>
+                            </params>
+
+                            <tag name="sulu.content.sortmode.show"/>
+                        </property>
+                    </properties>
+                </type>
+                <type name="downloads">
+                    <meta>
+                        <title lang="de">Downloads</title>
+                        <title lang="en">Downloads</title>
+                    </meta>
+                    <properties>
+                        <property name="title" type="text_line">
+                            <meta>
+                                <title lang="de">Titel</title>
+                                <title lang="en">Title</title>
+                            </meta>
+                        </property>
+
+                        <property name="documents" type="media_selection">
+                            <meta>
+                                <title lang="en">Downloads</title>
+                            </meta>
+
+                            <params>
+                                <param name="displayOptions" type="collection">
+                                    <param name="leftTop" value="false"/>
+                                    <param name="top" value="false"/>
+                                    <param name="rightTop" value="false"/>
+                                    <param name="left" value="false"/>
+                                    <param name="middle" value="false"/>
+                                    <param name="right" value="false"/>
+                                    <param name="leftBottom" value="false"/>
+                                    <param name="bottom" value="false"/>
+                                    <param name="rightBottom" value="false"/>
+                                </param>
+                                <param name="defaultDisplayOption" value="false"/>
+                            </params>
+                        </property>
+                    </properties>
+                </type>
+            </types>
+        </block>
+
+        <property name="external-link" type="snippet">
+            <meta>
+                <title lang="de">Externer Link</title>
+                <title lang="en">External link</title>
+            </meta>
+
+            <params>
+                <param name="snippetType" value="external_link"/>
+            </params>
+
+            <tag name="sulu.content.sortmode.show"/>
+        </property>
+
+        <property name="form_snippets" type="snippet">
+            <meta>
+                <title lang="de">Formular Auswählen</title>
+                <title lang="en">Choose Form</title>
+            </meta>
+            <params>
+                <param name="snippetType" value="blog_form"/>
+                <param name="default" value="true"/>
+            </params>
+        </property>
+    </properties>
+</template>
