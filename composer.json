@@ -36,7 +36,7 @@
         "doctrine/doctrine-cache-bundle": "~1.0",
         "oro/doctrine-extensions": "^1.0",
 
-        "massive/blog-bundle": "dev-develop"
+        "massive/blog-bundle": "dev-develop@dev"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",
@@ -72,6 +72,12 @@
     "config": {
         "bin-dir": "bin"
     },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "git@gitlab.massiveart.com:bundle/MassiveBlogBundle.git"
+        }
+    ],
     "extra": {
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",
